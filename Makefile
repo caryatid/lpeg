@@ -36,7 +36,7 @@ macosx:
 	make lpeg.so "DLLFLAGS = -bundle -undefined dynamic_lookup"
 
 liblpeg.a: $(FILES)
-	x86_64-alpine-linux-musl-gcc-ar rcs liblpeg.a $(FILES)
+	ar rcs liblpeg.a $(FILES)
 
 $(FILES): Makefile
 
