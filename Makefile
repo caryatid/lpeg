@@ -22,7 +22,7 @@ CWARNS = -Wall -Wextra -pedantic \
 # -Wunreachable-code \
 
 
-CFLAGS = $(CWARNS) $(COPT) -std=c99 -I$(LUADIR) 
+CFLAGS = $(CWARNS) $(COPT) -std=c99 -I$(LUADIR) -fPIC -fPIE
 CC = gcc
 
 FILES = lpvm.o lpcap.o lptree.o lpcode.o lpprint.o
