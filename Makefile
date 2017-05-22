@@ -23,13 +23,13 @@ CWARNS = -Wall -Wextra -pedantic \
 
 
 CFLAGS = $(CWARNS) $(COPT) -std=c99 -I$(LUADIR) 
-CC = ../../install/bin/musl-gcc
+CC = gcc
 
 FILES = lpvm.o lpcap.o lptree.o lpcode.o lpprint.o
 
 # For Linux
 linux:
-	make liblpeg.a "DLLFLAGS = -static -no-pie -nostartfiles"
+	make liblpeg.a "DLLFLAGS = -nostartfiles"
 
 # For Mac OS
 macosx:
