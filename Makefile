@@ -29,14 +29,14 @@ FILES = lpvm.o lpcap.o lptree.o lpcode.o lpprint.o
 
 # For Linux
 linux:
-	make lpeg.a "DLLFLAGS = -static -no-pie -nostartfiles"
+	make liblpeg.a "DLLFLAGS = -static -no-pie -nostartfiles"
 
 # For Mac OS
 macosx:
 	make lpeg.so "DLLFLAGS = -bundle -undefined dynamic_lookup"
 
-lpeg.a: $(FILES)
-	env $(CC) $(DLLFLAGS) $(FILES) -llua -o lpeg.a
+liblpeg.a: $(FILES)
+	x86_64-alpine-linux-musl-gcc-ar rcs liblpeg.a $(FILES)
 
 $(FILES): Makefile
 
@@ -45,7 +45,7 @@ test: test.lua re.lua lpeg.a
 
 install:
 	mkdir -p $(PREFIX)/lib
-	cp lpeg.a $(PREFIX)/lib
+	cp liblpeg.a $(PREFIX)/lib
 
 clean:
 	rm -f $(FILES) lpeg.a
