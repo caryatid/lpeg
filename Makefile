@@ -23,7 +23,7 @@ CWARNS = -Wall -Wextra -pedantic \
 
 
 CFLAGS = $(CWARNS) $(COPT) -std=c99 -I$(LUADIR) 
-CC = ../toolbox/dependency/install/bin/musl-gcc
+CC = ../../install/bin/musl-gcc
 
 FILES = lpvm.o lpcap.o lptree.o lpcode.o lpprint.o
 
