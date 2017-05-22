@@ -43,6 +43,10 @@ $(FILES): Makefile
 test: test.lua re.lua lpeg.a
 	./test.lua
 
+install:
+	mkdir -p $(PREFIX)/lib
+	cp lpeg.a $(PREFIX)/lib
+
 clean:
 	rm -f $(FILES) lpeg.a
 
